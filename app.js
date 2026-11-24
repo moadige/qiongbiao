@@ -93,6 +93,7 @@ function renderList(list) {
         ${n.winner ? `<span class="tag winner">${esc(n.winner)}</span>` : ''}
       </div>
       <div class="meta">
+        ${n.budget ? `<span class="amount">📊 预算 ${fmtAmount(n.budget)}</span>` : ''}
         ${n.amount ? `<span class="amount">💰 ${fmtAmount(n.amount)}</span>` : ''}
         ${n.purchaser ? `<span>🏛 ${esc(n.purchaser)}</span>` : ''}
         <span class="time">${fmtDate(n.publish_time)}</span>
