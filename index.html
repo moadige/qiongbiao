@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>琼标 · 海南政采第一门户</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">琼标</span>
+      <span class="sub">海南政采第一门户</span>
+    </div>
+    <div class="stats" id="stats">
+      <div class="stat"><b id="stat-total">—</b><span>公告</span></div>
+      <div class="stat"><b id="stat-regions">—</b><span>地区</span></div>
+      <div class="stat"><b id="stat-winners">—</b><span>中标方</span></div>
+      <div class="stat"><b id="stat-amount">—</b><span>累计中标额</span></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <input type="search" id="keyword" placeholder="搜索标题关键词，如：装修 / 物业 / 信息化" />
+    <select id="region"><option value="">全部地区</option></select>
+    <select id="notice-type"><option value="">全部类型</option></select>
+  </div>
+
+  <main id="list" class="list">
+    <div class="loading">加载中…</div>
+  </main>
+
+  <div class="pager" id="pager"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
