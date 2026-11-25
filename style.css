@@ -48,7 +48,7 @@ body {
   gap: 8px;
   padding: 0 16px;
   margin-top: -34px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .toolbar input, .toolbar select {
   border: 1px solid var(--line);
@@ -59,8 +59,8 @@ body {
   color: var(--text);
   outline: none;
 }
-.toolbar input { flex: 1.6; min-width: 0; }
-.toolbar select { flex: 1; min-width: 0; }
+.toolbar input { flex: 1 1 100%; min-width: 0; }
+.toolbar select { flex: 1 1 0; min-width: 0; }
 .toolbar input:focus, .toolbar select:focus { border-color: var(--brand); }
 
 .list { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
