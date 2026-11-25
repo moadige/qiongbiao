@@ -85,6 +85,18 @@ body {
 }
 .card .title:hover { color: var(--brand); }
 
+.card .pname {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--tag);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  max-width: 100%;
+}
+
 .card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .tag {
   background: var(--tag);

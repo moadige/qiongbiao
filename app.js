@@ -98,6 +98,7 @@ function renderList(list) {
   $('#list').innerHTML = list.map(n => `
     <div class="card">
       <a class="title" href="${esc(n.detail_url)}" target="_blank" rel="noopener">${esc(n.title)}</a>
+      ${n.project_name ? `<div class="pname">📋 ${esc(n.project_name)}</div>` : ''}
       <div class="tags">
         ${n.region ? `<span class="tag region">${esc(n.region)}</span>` : ''}
         ${n.notice_type ? `<span class="tag type">${esc(n.notice_type)}</span>` : ''}
