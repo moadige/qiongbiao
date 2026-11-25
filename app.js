@@ -12,6 +12,17 @@ function fmtAmount(yuan) {
   return yuan.toFixed(0) + ' 元';
 }
 
+// 金额展示：预算与中标金额相同时只显示一个，避免重复
+function fmtMoney(n) {
+  if (n.budget && n.amount && n.budget === n.amount) {
+    return `<span class="amount">💰 ${fmtAmount(n.amount)}</span>`;
+  }
+  let html = '';
+  if (n.budget) html += `<span class="amount">💰 ${fmtAmount(n.budget)}</span>`;
+  if (n.amount) html += `<span class="amount">💰 ${fmtAmount(n.amount)}</span>`;
+  return html;
+}
+
 function fmtDate(s) {
   if (!s) return '';
   return s.slice(0, 16);
@@ -93,8 +104,7 @@ function renderList(list) {
         ${n.winner ? `<span class="tag winner">${esc(n.winner)}</span>` : ''}
       </div>
       <div class="meta">
-        ${n.budget ? `<span class="amount">💰 ${fmtAmount(n.budget)}</span>` : ''}
-        ${n.amount ? `<span class="amount">💰 ${fmtAmount(n.amount)}</span>` : ''}
+        ${fmtMoney(n)}
         ${n.purchaser ? `<span>🏛 ${esc(n.purchaser)}</span>` : ''}
         <span class="time">${fmtDate(n.publish_time)}</span>
       </div>
